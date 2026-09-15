@@ -2117,6 +2117,166 @@
 
         }
 
+
+        /* =========================================================
+           ME SECTION — GENERAL RESPONSIVE HERO FIX
+           =========================================================
+           
+           This is the ONLY new section.
+
+           It makes the hero adapt continuously to the available
+           width instead of using separate fixed portrait sizes
+           for laptop / tablet / mobile.
+
+           Nothing else on the website is changed.
+           ========================================================= */
+
+        .hero {
+            width: 100%;
+            min-width: 0;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(0, 0.85fr);
+
+            overflow: hidden;
+        }
+
+
+        .hero-content {
+            width: 100%;
+            min-width: 0;
+
+            padding: clamp(30px, 5vw, 60px) 0;
+
+            transform:
+                translateY(clamp(-85px, -5vw, -40px));
+        }
+
+
+        .hero-content h1 {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+
+            font-size:
+                clamp(34px, 6vw, 82px);
+
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+
+        .hero-visual {
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            height: 100%;
+
+            overflow: visible;
+
+            transform: none;
+        }
+
+
+        .portrait {
+            width:
+                clamp(
+                    280px,
+                    58vw,
+                    650px
+                );
+
+            max-width: none;
+            max-height: none;
+
+            height: auto;
+
+            flex-shrink: 1;
+
+            transform:
+                translateX(
+                    clamp(
+                        -180px,
+                        -15vw,
+                        -35px
+                    )
+                );
+        }
+
+
+        .hero-visual::before {
+            width:
+                clamp(
+                    220px,
+                    32vw,
+                    360px
+                );
+
+            height:
+                clamp(
+                    220px,
+                    32vw,
+                    360px
+                );
+        }
+
+
+        /* Prevent the hero content itself from creating
+           horizontal overflow on very narrow screens. */
+
+        .hero-content,
+        .hero-visual,
+        .portrait {
+            max-width: 100%;
+        }
+
+
+        /* Allow the portrait to remain visually larger than
+           its column while the hero itself clips the overflow. */
+
+        .hero-visual .portrait {
+            max-width: none;
+        }
+        /* ===== FINAL HERO POSITIONING FIX ===== */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-visual {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 0;
+    height: 100%;
+}
+
+.portrait {
+    position: relative;
+    z-index: 2;
+
+    /* Keep the portrait large and let it overlap the name */
+    width: min(650px, 250%);
+    max-width: none;
+    max-height: none;
+    height: auto;
+
+    /* Stay UP instead of dropping down */
+    transform: translate(
+        clamp(-180px, -15vw, -30px),
+        clamp(-80px, -8vw, -20px)
+    );
+}
+
     </style>
 </head>
 
@@ -2977,9 +3137,6 @@
                         </div>
 
 
-                        
-
-
                         <div class="skill-logo">
                             <i class="devicon-cplusplus-plain"></i>
                         </div>
@@ -3003,9 +3160,6 @@
                         >
                             <i class="devicon-mysql-plain"></i>
                         </div>
-
-
-                        
 
 
                         <div class="skill-logo">
@@ -3055,8 +3209,6 @@
                         </div>
 
 
-                        
-
                         <div class="skill-logo">
                             <i class="devicon-html5-plain"></i>
                         </div>
@@ -3080,9 +3232,6 @@
                         >
                             <i class="devicon-tensorflow-original"></i>
                         </div>
-
-
-                        
 
 
                         <div class="skill-logo">
@@ -3110,7 +3259,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-docker-plain"></i>
                         </div>
@@ -3158,9 +3306,6 @@
                         </div>
 
 
-                        
-
-
                         <div class="skill-logo">
                             <i class="devicon-git-plain"></i>
                         </div>
@@ -3186,7 +3331,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-github-original"></i>
                         </div>
@@ -3212,7 +3356,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-vscode-plain"></i>
                         </div>
@@ -3238,7 +3381,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-amazonwebservices-plain-wordmark"></i>
                         </div>
@@ -3264,7 +3406,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-azuredevops-plain"></i>
                         </div>
@@ -3312,7 +3453,6 @@
                         </div>
 
 
-                        
                         <div class="skill-logo">
                             <i class="devicon-angular-plain"></i>
                         </div>
@@ -3337,8 +3477,6 @@
                             <i class="devicon-html5-plain"></i>
                         </div>
 
-
-                        
 
                         <div class="skill-logo">
                             <i class="devicon-html5-plain"></i>
