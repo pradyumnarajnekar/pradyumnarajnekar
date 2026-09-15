@@ -1,0 +1,4030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Devicon -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+
+    <title>Pradyumna Rajnekar</title>
+
+    <style>
+
+        /* =========================================================
+           ROOT
+           ========================================================= */
+
+        :root {
+            --bg: #151619;
+            --panel: #1d1f23;
+            --panel-2: #22242a;
+
+            --text: #f4f2ed;
+            --muted: #a6a6a9;
+
+            --gold: #f1bd55;
+            --gold-soft: rgba(241, 189, 85, 0.18);
+            --line: rgba(241, 189, 85, 0.34);
+
+            --white-soft: rgba(255, 255, 255, 0.08);
+
+            --max: 1180px;
+            --radius: 18px;
+        }
+
+
+        /* =========================================================
+           RESET
+           ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(241, 189, 85, 0.07),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(255, 255, 255, 0.035),
+                    transparent 25%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        .shell {
+            width: min(calc(100% - 56px), var(--max));
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+
+            padding: 24px 0;
+
+            background: rgba(21, 22, 25, 0.88);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.05);
+        }
+
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+
+        .nav-btn {
+            border: 1px solid transparent;
+            background: transparent;
+
+            color: var(--muted);
+
+            padding: 9px 13px;
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .nav-btn:hover {
+            color: var(--text);
+        }
+
+
+        .nav-btn.active {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           MAIN
+           ========================================================= */
+
+        main {
+            padding: 30px 0 90px;
+        }
+
+
+        .tab {
+            display: none;
+            animation: fadeIn 0.35s ease;
+        }
+
+
+        .tab.active {
+            display: block;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .hero {
+            min-height: 560px;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(180px, 0.85fr);
+
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.07);
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            padding: 60px 0;
+        }
+
+
+        .eyebrow {
+            margin-bottom: 18px;
+
+            color: var(--gold);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+
+        h1 {
+            max-width: 800px;
+
+            font-size:
+                clamp(42px, 6vw, 82px);
+
+            line-height: 0.92;
+
+            letter-spacing: -0.045em;
+
+            overflow-wrap: break-word;
+        }
+
+
+        .hero-subtitle {
+            margin-top: 22px;
+
+            max-width: 570px;
+
+            color: var(--muted);
+
+            font-family: "Courier New", monospace;
+
+            font-size:
+                clamp(15px, 1.6vw, 19px);
+
+            font-weight: 600;
+
+            letter-spacing: 0.02em;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           HERO IMAGE
+           ========================================================= */
+
+        .hero-visual {
+            height: 100%;
+            min-height: 500px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: flex-end;
+            justify-content: center;
+
+            overflow: visible;
+        }
+
+
+        .hero-visual::before {
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            border-radius: 50%;
+
+            background: var(--gold-soft);
+
+            filter: blur(25px);
+
+            opacity: 0.75;
+
+            bottom: 60px;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+
+        .portrait {
+            position: relative;
+
+            width: min(430px, 92%);
+
+            height: auto;
+            max-height: 520px;
+
+            object-fit: contain;
+            object-position: center bottom;
+
+            filter: contrast(1.05);
+
+            z-index: 1;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================================
+           SECTION HEADINGS
+           ========================================================= */
+
+        .section-heading {
+            display: flex;
+
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: 24px;
+
+            margin: 70px 0 28px;
+        }
+
+
+        .section-heading h2 {
+            font-size:
+                clamp(30px, 4vw, 52px);
+
+            line-height: 1;
+
+            letter-spacing: -0.035em;
+        }
+
+
+        .section-heading p {
+            max-width: 460px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           OVERVIEW CARDS
+           ========================================================= */
+
+        .overview-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 16px;
+        }
+
+
+        .card {
+            position: relative;
+
+            min-height: 245px;
+
+            padding: 24px;
+
+            background: var(--panel);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.07);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+            isolation: isolate;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        /* =========================================================
+           FADED BACKGROUND IMAGE FOR ME CARDS
+           ========================================================= */
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 62%;
+            height: 100%;
+
+            background-image: var(--card-image);
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            opacity: 0.16;
+
+            filter:
+                grayscale(100%)
+                contrast(1.05);
+
+            -webkit-mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.12) 18%,
+                    rgba(0,0,0,0.60) 48%,
+                    #000 78%
+                );
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.12) 18%,
+                    rgba(0,0,0,0.60) 48%,
+                    #000 78%
+                );
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            transition:
+                transform 0.5s ease,
+                opacity 0.3s ease;
+        }
+
+
+        .card::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--panel) 0%,
+                    rgba(29,31,35,0.96) 28%,
+                    rgba(29,31,35,0.72) 52%,
+                    rgba(29,31,35,0.18) 82%,
+                    rgba(29,31,35,0) 100%
+                );
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .card:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                var(--line);
+        }
+
+
+        .card:hover::before {
+            opacity: 0.22;
+            transform: scale(1.04);
+        }
+
+
+        /* =========================================================
+           CARD CONTENT
+           ========================================================= */
+
+        .card-label {
+            margin-bottom: 18px;
+
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.16em;
+
+            text-transform: uppercase;
+        }
+
+
+        .card h3 {
+            margin-bottom: 10px;
+
+            font-size: 22px;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .card h4 {
+            margin-bottom: 12px;
+
+            color: #d7d7d9;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        .card p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        .card-link {
+            display: inline-flex;
+
+            margin-top: 20px;
+
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+
+            background: transparent;
+
+            border: none;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           CARD LOGOS
+           ========================================================= */
+
+        .card-logo {
+            width: 50px;
+            height: 50px;
+
+            margin-top: 18px;
+            margin-bottom: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            overflow: hidden;
+        }
+
+
+        .card-logo img {
+            width: 45px;
+            height: 45px;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+           SMALL LOGOS IN ME CARDS
+           ========================================================= */
+
+        .skill-logos {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+
+
+        .me-skill-logo {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            color: #777;
+
+            font-size: 28px;
+        }
+
+
+        .me-skill-logo img {
+            width: 45px;
+            height: 45px;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+           PROJECT PLATFORM
+           ========================================================= */
+
+        .project-platform {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 18px;
+            margin-bottom: 10px;
+
+            color: #888;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           MUSIC CARD
+           ========================================================= */
+
+        .music-card {
+            position: relative;
+
+            grid-column: 1 / -1;
+
+            height: 210px;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            margin-top: 0;
+
+            padding: 34px;
+
+            background: var(--panel);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: var(--radius);
+
+            text-decoration: none;
+
+            isolation: isolate;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .music-card-content {
+            position: relative;
+
+            z-index: 3;
+
+            width: 58%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+
+
+        .music-card-label {
+            margin-bottom: 14px;
+
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.16em;
+
+            text-transform: uppercase;
+        }
+
+
+        .music-card h3 {
+            margin-bottom: 10px;
+
+            font-size:
+                clamp(32px, 4vw, 52px);
+
+            line-height: 1;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        .music-card-link {
+            margin-top: 22px;
+
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .music-card-image {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 62%;
+            height: 100%;
+
+            z-index: 1;
+
+            overflow: hidden;
+        }
+
+
+        .music-card-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--panel) 0%,
+                    rgba(29,31,35,0.96) 8%,
+                    rgba(29,31,35,0.75) 24%,
+                    rgba(29,31,35,0.25) 48%,
+                    rgba(29,31,35,0.02) 72%,
+                    rgba(29,31,35,0) 100%
+                );
+
+            z-index: 2;
+
+            pointer-events: none;
+        }
+
+
+        .music-card-image img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+            object-position: center;
+
+            opacity: 0.9;
+
+            filter:
+                grayscale(100%)
+                contrast(1.05);
+
+            transition:
+                transform 0.5s ease,
+                opacity 0.3s ease;
+        }
+
+
+        .music-card:hover {
+            transform: translateY(-4px);
+
+            border-color: var(--line);
+        }
+
+
+        .music-card:hover .music-card-image img {
+            transform: scale(1.04);
+
+            opacity: 1;
+        }
+
+
+        .music-card:hover .music-card-link {
+            transform: translateX(4px);
+
+            color: #ffd477;
+        }
+
+
+        /* =========================================================
+           CONTACT
+           ========================================================= */
+
+        .contact-row {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 10px;
+
+            margin-top: 16px;
+        }
+
+
+        .contact-item {
+            padding: 18px;
+
+            background: var(--panel);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: 14px;
+        }
+
+
+        .contact-item span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.13em;
+
+            text-transform: uppercase;
+        }
+
+
+        .contact-item strong {
+            display: block;
+
+            font-size: 13px;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        /* =========================================================
+           TIMELINE
+           ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            display: grid;
+
+            gap: 18px;
+        }
+
+
+        .timeline-item {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                150px 1fr;
+
+            gap: 30px;
+
+            padding: 28px;
+
+            background: var(--panel);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            isolation: isolate;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        /* =========================================================
+           FADED IMAGE FOR EXPERIENCE / EDUCATION
+           ========================================================= */
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 62%;
+            height: 100%;
+
+            background-image: var(--timeline-image);
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            background-size: contain;
+
+            opacity: 0.16;
+
+            filter:
+                grayscale(100%)
+                contrast(1.05);
+
+            -webkit-mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.15) 18%,
+                    rgba(0,0,0,0.65) 48%,
+                    #000 78%
+                );
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.15) 18%,
+                    rgba(0,0,0,0.65) 48%,
+                    #000 78%
+                );
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            transition:
+                transform 0.5s ease,
+                opacity 0.3s ease;
+        }
+
+
+        .timeline-item::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    var(--panel) 0%,
+                    rgba(29,31,35,0.96) 28%,
+                    rgba(29,31,35,0.72) 52%,
+                    rgba(29,31,35,0.18) 82%,
+                    rgba(29,31,35,0) 100%
+                );
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+
+        .timeline-item > * {
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .timeline-item:hover {
+            transform: translateY(-3px);
+
+            border-color: var(--line);
+        }
+
+
+        .timeline-item:hover::before {
+            opacity: 0.22;
+
+            transform: scale(1.04);
+        }
+
+
+        .timeline-date {
+            color: var(--gold);
+
+            font-size: 11px;
+            font-weight: 800;
+
+            letter-spacing: 0.12em;
+        }
+
+
+        .timeline-content {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+        }
+
+
+        .timeline-logo {
+            flex-shrink: 0;
+
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            overflow: hidden;
+        }
+
+
+        .timeline-logo img {
+            width: 36px;
+            height: 36px;
+
+            object-fit: contain;
+        }
+
+
+        .timeline-details {
+            flex: 1;
+        }
+
+
+        .timeline-content h3 {
+            margin-bottom: 6px;
+
+            font-size: 22px;
+        }
+
+
+        .timeline-company {
+            margin-bottom: 15px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        .timeline-content p {
+            max-width: 760px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           EDUCATION SUBSECTION
+           ========================================================= */
+
+        .experience-subsection {
+            margin-top: 80px;
+
+            padding-top: 50px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+
+        .subsection-heading {
+            margin-bottom: 40px;
+        }
+
+
+        .subsection-heading h2 {
+            margin-top: 8px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .subsection-heading p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================================================
+           SKILLS
+           ========================================================= */
+
+        .skills-subsection {
+            margin-top: 55px;
+        }
+
+
+        .skills-subsection:first-of-type {
+            margin-top: 10px;
+        }
+
+
+        .skills-subsection-heading {
+            display: flex;
+
+            align-items: baseline;
+
+            gap: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .skills-subsection-heading h3 {
+            margin: 0;
+
+            color: #fff;
+
+            font-size: 18px;
+            font-weight: 600;
+
+            letter-spacing: -0.01em;
+        }
+
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+
+        /* =========================================================
+           SKILL CARD
+           ========================================================= */
+
+        .skill {
+            position: relative;
+
+            min-height: 130px;
+
+            padding: 22px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background: var(--panel);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            isolation: isolate;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .skill:hover {
+            transform: translateY(-3px);
+
+            border-color: var(--line);
+        }
+
+
+        /* =========================================================
+           LARGE FADED DEVICON
+           ========================================================= */
+
+        .skill-bg-logo {
+            position: absolute;
+
+            top: 50%;
+            right: 18px;
+
+            transform: translateY(-50%);
+
+            z-index: 0;
+
+            color: #aaa;
+
+            font-size: 105px;
+
+            line-height: 1;
+
+            opacity: 0.09;
+
+            filter: grayscale(100%);
+
+            pointer-events: none;
+
+            -webkit-mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.35) 25%,
+                    #000 65%
+                );
+
+            mask-image:
+                linear-gradient(
+                    to right,
+                    transparent 0%,
+                    rgba(0,0,0,0.35) 25%,
+                    #000 65%
+                );
+
+            transition:
+                transform 0.35s ease,
+                opacity 0.3s ease;
+        }
+
+
+        .skill > *:not(.skill-bg-logo) {
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .skill:hover .skill-bg-logo {
+            transform:
+                translateY(-50%)
+                scale(1.05);
+
+            opacity: 0.14;
+        }
+
+
+        /* =========================================================
+           NORMAL SKILL ICON
+           ========================================================= */
+
+        .skill-logo {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            height: 42px;
+
+            color: #777;
+
+            font-size: 34px;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .skill:hover .skill-logo {
+            color: #aaa;
+
+            transform: scale(1.05);
+        }
+
+
+        .skill-number {
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 0.1em;
+        }
+
+
+        .skill-name {
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           PROJECTS
+           ========================================================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+
+        .project {
+            min-height: 200px;
+
+            padding: 26px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(241,189,85,0.07),
+                    transparent 45%
+                ),
+                var(--panel);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            border-radius: var(--radius);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .project:hover {
+            transform: translateY(-4px);
+
+            border-color: var(--line);
+        }
+
+
+        .project h3 {
+            margin: 15px 0 10px;
+
+            font-size: 27px;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        .project p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-top: 20px;
+        }
+
+
+        .tag {
+            padding: 6px 9px;
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            border-radius: 999px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .footer {
+            position: fixed;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                rgba(18,18,18,0.94);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            z-index: 999;
+        }
+
+
+        .footer-socials {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            gap: 18px;
+        }
+
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #777;
+
+            font-size: 19px;
+
+            transition:
+                all 0.25s ease;
+        }
+
+
+        .footer-socials a:hover {
+            color: #aaa;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           LAPTOP
+           ========================================================= */
+
+        @media (min-width: 901px) {
+
+            .hero {
+                min-height: 560px;
+            }
+
+
+            .hero-content {
+                width: 68%;
+
+                transform:
+                    translateY(-80px);
+            }
+
+
+            .hero-visual {
+                width: 58%;
+
+                min-height: 560px;
+                height: 560px;
+
+                display: flex;
+
+                align-items: flex-end;
+                justify-content: center;
+
+                position: relative;
+
+                transform: none;
+            }
+
+
+            .portrait {
+                width: 650px;
+
+                max-height: 600px;
+                max-width: none;
+
+                height: auto;
+
+                transform:
+                    translateX(-180px);
+
+                object-fit: contain;
+                object-position: center bottom;
+            }
+
+        }
+
+
+        /* =========================================================
+           TABLET
+           ========================================================= */
+
+        @media (min-width: 641px) and (max-width: 900px) {
+
+            .shell {
+                width:
+                    min(calc(100% - 42px), var(--max));
+            }
+
+
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+
+            .hero {
+                min-height: 500px;
+
+                display: grid;
+
+                grid-template-columns:
+                    58% 42%;
+
+                align-items: center;
+
+                position: relative;
+
+                overflow: visible;
+            }
+
+
+            .hero-content {
+                width: 68%;
+
+                padding: 0;
+
+                position: relative;
+
+                z-index: 5;
+
+                transform:
+                    translateY(-75px);
+            }
+
+
+            .hero-visual {
+                width: 100%;
+
+                min-height: 460px;
+                height: 100%;
+
+                position: relative;
+
+                display: flex;
+
+                align-items: center;
+                justify-content: flex-start;
+
+                overflow: visible;
+
+                transform:
+                    translateY(-20px);
+
+                z-index: 2;
+            }
+
+
+            .portrait {
+                width: 560px;
+
+                max-width: none;
+                max-height: 560px;
+
+                height: auto;
+
+                object-fit: contain;
+                object-position: center center;
+
+                transform:
+                    translateX(-150px);
+
+                filter: contrast(1.05);
+
+                flex-shrink: 0;
+
+                z-index: 2;
+            }
+
+
+            .overview-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .contact-row {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 640px) {
+
+            .shell {
+                width:
+                    min(calc(100% - 28px), var(--max));
+            }
+
+
+            .site-header {
+                padding: 10px 0;
+            }
+
+
+            .nav {
+                gap: 2px;
+
+                flex: 1;
+            }
+
+
+            .nav-btn {
+                padding: 8px 9px;
+
+                font-size: 10px;
+
+                letter-spacing: 0.04em;
+            }
+
+
+            main {
+                padding-top: 16px;
+            }
+
+
+            .hero {
+                min-height: 560px;
+
+                position: relative;
+
+                display: flex;
+
+                align-items: center;
+
+                overflow: visible;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,0.07);
+            }
+
+
+            .hero-content {
+                position: relative;
+
+                z-index: 5;
+
+                width: 68%;
+
+                padding: 0;
+
+                transform:
+                    translateY(-85px);
+            }
+
+
+            .eyebrow {
+                margin-bottom: 12px;
+
+                font-size: 9px;
+            }
+
+
+            h1 {
+                position: relative;
+
+                z-index: 10;
+
+                width: max-content;
+
+                max-width: 100%;
+
+                margin: 0;
+
+                font-size:
+                    clamp(42px, 6vw, 82px);
+
+                line-height: 0.92;
+
+                letter-spacing: -0.045em;
+
+                overflow-wrap: normal;
+            }
+
+
+            .hero-subtitle {
+                margin-top: 14px;
+
+                font-size: 12px;
+
+                line-height: 1.5;
+            }
+
+
+            .hero-visual {
+                position: absolute;
+
+                top: 50%;
+                right: 0;
+
+                width: 55%;
+
+                height: 100%;
+
+                min-height: 560px;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: flex-start;
+
+                overflow: visible;
+
+                transform:
+                    translateY(calc(-50% - 35px));
+
+                z-index: 2;
+            }
+
+
+            .portrait {
+                position: relative;
+
+                width: 540px;
+
+                max-width: none;
+                max-height: 580px;
+
+                height: auto;
+
+                object-fit: contain;
+                object-position: center center;
+
+                filter: contrast(1.05);
+
+                transform:
+                    translateX(-170px);
+
+                flex-shrink: 0;
+
+                z-index: 2;
+            }
+
+
+            .section-heading {
+                display: block;
+
+                margin: 50px 0 20px;
+            }
+
+
+            .section-heading h2 {
+                margin-bottom: 12px;
+
+                font-size: 34px;
+            }
+
+
+            .section-heading p {
+                font-size: 13px;
+            }
+
+
+            .overview-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contact-row {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* Keep skills two-column on mobile */
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+
+            .skills-subsection {
+                margin-top: 40px;
+            }
+
+
+            .skills-subsection:first-of-type {
+                margin-top: 10px;
+            }
+
+
+            .skills-subsection-heading {
+                gap: 10px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .skills-subsection-heading h3 {
+                font-size: 16px;
+            }
+
+
+            .skill {
+                min-height: 110px;
+
+                padding: 18px;
+            }
+
+
+            .skill-name {
+                font-size: 15px;
+            }
+
+
+            .skill-logo {
+                font-size: 32px;
+            }
+
+
+            .skill-bg-logo {
+                right: 5px;
+
+                font-size: 75px;
+            }
+
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+
+                padding: 22px;
+            }
+
+
+            .timeline-content {
+                gap: 12px;
+            }
+
+
+            .timeline-logo {
+                width: 44px;
+                height: 44px;
+            }
+
+
+            .timeline-logo img {
+                width: 30px;
+                height: 30px;
+            }
+
+
+            .timeline-content h3 {
+                font-size: 19px;
+            }
+
+
+            .experience-subsection {
+                margin-top: 60px;
+
+                padding-top: 40px;
+            }
+
+
+            .music-card {
+                height: 190px;
+
+                padding: 24px;
+            }
+
+
+            .music-card-content {
+                width: 72%;
+            }
+
+
+            .music-card h3 {
+                font-size: 30px;
+            }
+
+
+            .music-card-label {
+                font-size: 8px;
+
+                line-height: 1.4;
+            }
+
+
+            .music-card-link {
+                margin-top: 16px;
+            }
+
+
+            .music-card-image {
+                width: 72%;
+            }
+
+
+            .footer-socials {
+                gap: 9px;
+            }
+
+
+            .footer-socials a {
+                width: 36px;
+                height: 36px;
+
+                font-size: 16px;
+            }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+           ========================================================= */
+
+        @media (max-width: 390px) {
+
+            .nav-btn {
+                padding: 7px 7px;
+
+                font-size: 9px;
+            }
+
+
+            .hero {
+                min-height: 370px;
+            }
+
+
+            .hero-content {
+                padding: 30px 0;
+            }
+
+
+            h1 {
+                font-size:
+                    clamp(
+                        28px,
+                        9.5vw,
+                        44px
+                    );
+            }
+
+
+            .hero-subtitle {
+                font-size: 11px;
+            }
+
+
+            .portrait {
+                width: 470px;
+
+                max-height: 320px;
+            }
+
+
+            .hero-visual {
+                min-height: 320px;
+            }
+
+
+            .music-card {
+                height: 180px;
+
+                padding: 20px;
+            }
+
+
+            .music-card-content {
+                width: 78%;
+            }
+
+
+            .music-card h3 {
+                font-size: 27px;
+            }
+
+
+            .music-card-image {
+                width: 78%;
+            }
+
+
+            .skill-bg-logo {
+                font-size: 65px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         HEADER
+         ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="shell">
+
+            <div class="header-inner">
+
+                <nav class="nav">
+
+                    <button
+                        class="nav-btn active"
+                        data-tab="me"
+                    >
+                        Me
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        data-tab="experience"
+                    >
+                        Who I worked for
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        data-tab="projects"
+                    >
+                        What i've built
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        data-tab="skills"
+                    >
+                        Knowledge base
+                    </button>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MAIN
+         ========================================================= -->
+
+    <main class="shell">
+
+
+        <!-- =====================================================
+             ME
+             ===================================================== -->
+
+        <section
+            class="tab active"
+            id="me"
+        >
+
+
+            <!-- HERO -->
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        Hei, I'm
+                    </div>
+
+
+                    <h1>
+                        Pradyumna Rajnekar
+                    </h1>
+
+
+                    <p class="hero-subtitle">
+                        &lt;developer&gt;
+                    </p>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <img
+                        src="img/me.png"
+                        alt="Portrait"
+                        class="portrait"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ABOUT -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        A little about me
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="overview-grid">
+
+
+                <!-- =================================================
+                     WORK CARD
+                     ================================================= -->
+
+                <article
+                    class="card"
+                    style="--card-image: url('img/tcs-logo.png');"
+                >
+
+                    <div class="card-label">
+                        Work
+                    </div>
+
+
+                    <div class="card-logo">
+
+                        <img
+                            src="img/tcs-logo.png"
+                            alt="Company Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        DevOps Engineer
+                    </h3>
+
+
+                    <h4>
+                        Assitant Systems Engineer
+                    </h4>
+
+
+                    <p>
+                        Tata Consultancy Services, Pune
+                    </p>
+
+
+                    <button
+                        class="card-link"
+                        data-go="experience"
+                    >
+                        View All Work →
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     EDUCATION CARD
+                     ================================================= -->
+
+                <article
+                    class="card"
+                    style="--card-image: url('img/medicaps.logo.png');"
+                >
+
+                    <div class="card-label">
+                        Education
+                    </div>
+
+
+                    <div class="skill-logos">
+
+                        <div class="me-skill-logo">
+
+                            <img
+                                src="img/medicaps.logo.png"
+                                alt="College"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Computer Science Engineer
+                    </h3>
+
+
+                    <h4>
+                        Bachelor Of Technology
+                    </h4>
+
+
+                    <p>
+                        Medicaps University, Indore
+                    </p>
+
+
+                    <button
+                        class="card-link"
+                        data-go="education"
+                    >
+                        View All Education →
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     SKILLS CARD
+                     ================================================= -->
+
+                <article
+                    class="card"
+                    style="--card-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg');"
+                >
+
+                    <div class="card-label">
+                        Skills
+                    </div>
+
+
+                    <div class="skill-logos">
+
+                        <div class="me-skill-logo">
+
+                            <i class="devicon-python-plain"></i>
+
+                        </div>
+
+
+                        <div class="me-skill-logo">
+
+                            <i class="devicon-java-plain"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Python, Java
+                    </h3>
+
+
+                    <button
+                        class="card-link"
+                        data-go="skills"
+                    >
+                        View My tech Stack →
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PROJECT CARD
+                     ================================================= -->
+
+                <article
+                    class="card"
+                    style="--card-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg');"
+                >
+
+                    <div class="card-label">
+                        Projects
+                    </div>
+
+
+                    <div class="project-platform">
+
+                        <i
+                            class="devicon-netlify-plain"
+                            style="font-size: 35px;"
+                        ></i>
+
+                    </div>
+
+
+                    <h3>
+
+                        <a
+                            href="https://vrikshnetra.netlify.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+
+                            style="
+                                color: var(--gold);
+                                text-decoration: none;
+                            "
+
+                            onmouseover="
+                                this.style.color='#fff'
+                            "
+
+                            onmouseout="
+                                this.style.color='var(--gold)'
+                            "
+                        >
+                            Vrikshnetra
+                        </a>
+
+                    </h3>
+
+
+                    <button
+                        class="card-link"
+                        data-go="projects"
+                    >
+                        View all stuff built →
+                    </button>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     MUSIC CARD
+                     ================================================= -->
+
+                <a
+                    href="https://www.youtube.com/@pradyumnarajnekar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="music-card"
+                >
+
+                    <div class="music-card-content">
+
+                        <span class="music-card-label">
+                            And lately, sometimes, just to have a lightheart and to relax
+                        </span>
+
+
+                        <h3>
+                            I make music
+                        </h3>
+
+
+                        <span class="music-card-link">
+                            Listen →
+                        </span>
+
+                    </div>
+
+
+                    <div class="music-card-image">
+
+                        <img
+                            src="img/music.jpeg"
+                            alt="Music"
+                        >
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTACT
+                 ================================================= -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-row">
+
+
+                <a
+                    href="mailto:pradyumnarajnekar@gmail.com"
+                    class="contact-item"
+                    onclick="openEmail(event)"
+                >
+
+                    <span>
+                        Mail
+                    </span>
+
+                    <strong>
+                        pradyumnarajnekar@gmail.com
+                    </strong>
+
+                </a>
+
+
+
+                <a
+                    href="https://www.linkedin.com/in/pradyumnarajnekar"
+                    class="contact-item"
+                    onclick="openLinkedIn(event)"
+                >
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <strong>
+                        @pradyumnarajnekar
+                    </strong>
+
+                </a>
+
+
+
+                <a
+                    href="https://github.com/pradyumnarajnekar"
+                    class="contact-item"
+                    onclick="openGitHub(event)"
+                >
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <strong>
+                        @pradyumnarajnekar
+                    </strong>
+
+                </a>
+
+
+
+                <a
+                    href="https://docs.google.com/document/d/1rIU3Kn7OOXRfMtRIbJ1kYo0aKub27RvZ92dee3ZOgBk/edit?usp=sharing"
+                    class="contact-item"
+                    onclick="openResume(event)"
+                >
+
+                    <span>
+                        View Resume
+                    </span>
+
+                    <strong>
+                        resume
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EXPERIENCE
+             ===================================================== -->
+
+        <section
+            class="tab"
+            id="experience"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Experience
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+                <!-- =================================================
+                     WORK 01
+                     ================================================= -->
+
+                <article
+                    class="timeline-item"
+                    style="
+                        --timeline-image:
+                        url('img/tcs-logo.png');
+                    "
+                >
+
+                    <div class="timeline-date">
+                        Jan, 2026 — PRESENT
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-logo">
+
+                            <img
+                                src="img/tcs-logo.png"
+                                alt="Company Logo"
+                            >
+
+                        </div>
+
+
+                        <div class="timeline-details">
+
+                            <h3>
+                                DevOps Engineer
+                            </h3>
+
+
+                            <div class="timeline-company">
+                                Tata Consultancy Services, Pune
+                            </div>
+
+
+                            <p>
+                                Working as a DevOps Engineer having a hands on experience in AWS, Azure DevOps and IBM MQ.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     WORK 02
+                     ================================================= -->
+
+                <article
+                    class="timeline-item"
+                    style="
+                        --timeline-image:
+                        url('img/american-chase.logo.png');
+                    "
+                >
+
+                    <div class="timeline-date">
+                        Oct, 2025 — Jan, 2026
+                    </div>
+
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-logo">
+
+                            <img
+                                src="img/american-chase.logo.png"
+                                alt="Company Logo"
+                            >
+
+                        </div>
+
+
+                        <div class="timeline-details">
+
+                            <h3>
+                                Associate Software Engineer
+                            </h3>
+
+
+                            <div class="timeline-company">
+                                American Chase, Indore
+                            </div>
+
+
+                            <p>
+                                Worked as a Oracle Fusion Cloud Time and Labour Consultant.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EDUCATION
+                 ================================================= -->
+
+            <div
+                class="experience-subsection"
+                id="education"
+            >
+
+                <div class="subsection-heading">
+
+
+                    <h2>
+                        Education
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <!-- =================================================
+                         COLLEGE
+                         ================================================= -->
+
+                    <article
+                        class="timeline-item"
+                        style="
+                            --timeline-image:
+                            url('img/medicaps.logo.png');
+                        "
+                    >
+
+                        <div class="timeline-date">
+                            Batch of 2025
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-logo">
+
+                                <img
+                                    src="img/medicaps.logo.png"
+                                    alt="College Logo"
+                                >
+
+                            </div>
+
+
+                            <div class="timeline-details">
+
+                                <h3>
+                                    Bachelor Of Technology
+                                </h3>
+
+
+                                <div class="timeline-company">
+                                    Medicaps University, Mhow
+                                </div>
+
+
+                                <p>
+                                    Computer Science Engineer with Specialization in AI-ML, 8.53 CGPA
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =================================================
+                         SCHOOL
+                         ================================================= -->
+
+                    <article
+                        class="timeline-item"
+                        style="
+                            --timeline-image:
+                            url('img/rajeshwarlogo.png');
+                        "
+                    >
+
+                        <div class="timeline-date">
+                            Batch of 2021
+                        </div>
+
+
+                        <div class="timeline-content">
+
+                            <div class="timeline-logo">
+
+                                <img
+                                    src="img/rajeshwarlogo.png"
+                                    alt="School Logo"
+                                >
+
+                            </div>
+
+
+                            <div class="timeline-details">
+
+                                <h3>
+                                    XII
+                                </h3>
+
+
+                                <div class="timeline-company">
+                                    Rajeshwar Higher Secondary, School
+                                </div>
+
+
+                                <p>
+                                    Physics, Chemistry and Maths. 90.4%
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SKILLS
+             ===================================================== -->
+
+        <section
+            class="tab"
+            id="skills"
+        >
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Skills
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LANGUAGES
+                 ================================================= -->
+
+            <div class="skills-subsection">
+
+                <div class="skills-subsection-heading">
+
+                    <h3>
+                        Languages
+                    </h3>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- Python -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-python-plain"></i>
+                        </div>
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-python-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Python
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Java -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-java-plain"></i>
+                        </div>
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-java-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Java
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- C++ -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-cplusplus-plain"></i>
+                        </div>
+
+
+                        
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-cplusplus-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            C++
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SQL -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-mysql-plain"></i>
+                        </div>
+
+
+                        
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-mysql-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            SQL
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TECHNOLOGIES
+                 ================================================= -->
+
+            <div class="skills-subsection">
+
+                <div class="skills-subsection-heading">
+
+                    <h3>
+                        Technologies
+                    </h3>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- Front-end -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-html5-plain"></i>
+                        </div>
+
+
+                        
+
+                        <div class="skill-logo">
+                            <i class="devicon-html5-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Front-end Development
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- AI / ML -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-tensorflow-original"></i>
+                        </div>
+
+
+                        
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-tensorflow-original"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            AI / ML
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- DevOps -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-docker-plain"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-docker-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            DevOps
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TOOLS
+                 ================================================= -->
+
+            <div class="skills-subsection">
+
+                <div class="skills-subsection-heading">
+
+                    <h3>
+                        Tools
+                    </h3>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- Git -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-git-plain"></i>
+                        </div>
+
+
+                        
+
+
+                        <div class="skill-logo">
+                            <i class="devicon-git-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Git
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- GitHub -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-github-original"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-github-original"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            GitHub
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- VS Code -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-vscode-plain"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-vscode-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            VS Code
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- AWS -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-amazonwebservices-plain-wordmark"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-amazonwebservices-plain-wordmark"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            AWS
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Azure DevOps -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-azuredevops-plain"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-azuredevops-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Azure DevOps
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FRAMEWORKS & WEB
+                 ================================================= -->
+
+            <div class="skills-subsection">
+
+                <div class="skills-subsection-heading">
+
+                    <h3>
+                        Frameworks & Web
+                    </h3>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- Angular -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-angular-plain"></i>
+                        </div>
+
+
+                        
+                        <div class="skill-logo">
+                            <i class="devicon-angular-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            Angular
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HTML -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-html5-plain"></i>
+                        </div>
+
+
+                        
+
+                        <div class="skill-logo">
+                            <i class="devicon-html5-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            HTML
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CSS -->
+
+                    <article class="skill">
+
+                        <div
+                            class="skill-bg-logo"
+                            aria-hidden="true"
+                        >
+                            <i class="devicon-css3-plain"></i>
+                        </div>
+
+                        <div class="skill-logo">
+                            <i class="devicon-css3-plain"></i>
+                        </div>
+
+
+                        <div class="skill-name">
+                            CSS
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECTS
+             ===================================================== -->
+
+        <section
+            class="tab"
+            id="projects"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- Vrikshnetra -->
+
+                <article class="project">
+
+                    <div>
+
+                        <h3>
+
+                            <a
+                                href="https://vrikshnetra.netlify.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+
+                                style="
+                                    color: var(--gold);
+                                    text-decoration: none;
+                                "
+
+                                onmouseover="
+                                    this.style.color='#fff'
+                                "
+
+                                onmouseout="
+                                    this.style.color='var(--gold)'
+                                "
+                            >
+                                Vrikshnetra
+                            </a>
+
+                        </h3>
+
+
+                        <p>
+                            An AI-ML and CNN based Plant Specie Identification System using a leaf Image.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+                            <span class="tag">
+                                HTML
+                            </span>
+
+                            <span class="tag">
+                                CSS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Laptop Price Predictor -->
+
+                <article class="project">
+
+                    <div>
+
+                        <h3>
+
+                            <a
+                                href="https://github.com/pradyumnarajnekar/temp_projects/tree/main/Laptop%20Price%20Predictor"
+                                target="_blank"
+                                rel="noopener noreferrer"
+
+                                style="
+                                    color: var(--gold);
+                                    text-decoration: none;
+                                "
+
+                                onmouseover="
+                                    this.style.color='#fff'
+                                "
+
+                                onmouseout="
+                                    this.style.color='var(--gold)'
+                                "
+                            >
+                                Laptop Price Predictor
+                            </a>
+
+                        </h3>
+
+
+                        <p>
+                            (Re-Deploying Soon) An Ai-Ml based predictor system to calculate a Laptop's price on the basis of it's specs.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+                            <span class="tag">
+                                StreamLit
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Dine.in -->
+
+                <article class="project">
+
+                    <div>
+
+                        <h3>
+
+                            <a
+                                href="https://pradyumnarajnekar.github.io/me/me.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+
+                                style="
+                                    color: var(--gold);
+                                    text-decoration: none;
+                                "
+
+                                onmouseover="
+                                    this.style.color='#fff'
+                                "
+
+                                onmouseout="
+                                    this.style.color='var(--gold)'
+                                "
+                            >
+                                Dine.in
+                            </a>
+
+                        </h3>
+
+
+                        <p>
+                            (Deploying Soon) A complete tool to manage your restaurant and cafe. From viewing menus to paying, managing tables to recieving orders, all at one place.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span class="tag">
+                                Backend
+                            </span>
+
+                            <span class="tag">
+                                Database
+                            </span>
+
+                            <span class="tag">
+                                HTML, CSS, JS
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-socials">
+
+
+            <!-- Instagram -->
+
+            <a
+                href="https://www.instagram.com/pradyumnarajnekar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+
+
+            <!-- Facebook -->
+
+            <a
+                href="https://www.facebook.com/pradyumnarajnekar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+
+
+            <!-- LinkedIn -->
+
+            <a
+                href="https://www.linkedin.com/in/pradyumnarajnekar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+
+
+            <!-- X -->
+
+            <a
+                href="https://twitter.com/pradyumnar_?t=o-bY_JP8j9QYC6dyxjNqnw&s=09"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+
+
+            <!-- Pinterest -->
+
+            <a
+                href="https://in.pinterest.com/pradyumnarajnekar1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+
+
+
+            <!-- YouTube -->
+
+            <a
+                href="https://www.youtube.com/@pradyumnarajnekar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+
+
+            <!-- GitHub -->
+
+            <a
+                href="https://github.com/pradyumnarajnekar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+
+
+            <!-- Spotify -->
+
+            <a
+                href="https://open.spotify.com/artist/1y0IbkbC8MMRqtgbDEIeOO"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Spotify"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-spotify"></i>
+            </a>
+
+
+
+            <!-- Apple Music -->
+
+            <a
+                href="https://music.apple.com/in/artist/%E0%A4%AA-%E0%A5%8D%E0%A4%B0-%E0%A4%A6-%E0%A5%8D%E0%A4%AF-%E0%A5%81-%E0%A4%AE-%E0%A5%8D%E0%A4%A8-%E0%A4%B0-%E0%A4%BE-%E0%A4%9C-%E0%A4%A8-%E0%A5%87-%E0%A4%95%E0%A4%B0/1645929093"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apple Music"
+                onclick="openSocial(event, this.href)"
+            >
+                <i class="fa-brands fa-apple"></i>
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+        /* =========================================================
+           ELEMENTS
+           ========================================================= */
+
+        const tabs =
+            document.querySelectorAll(".tab");
+
+
+        const navButtons =
+            document.querySelectorAll(".nav-btn");
+
+
+        const goButtons =
+            document.querySelectorAll("[data-go]");
+
+
+
+        /* =========================================================
+           TAB NAVIGATION
+           ========================================================= */
+
+        function showTab(tabId) {
+
+            const target =
+                document.getElementById(tabId);
+
+
+            if (!target) {
+                return;
+            }
+
+
+            tabs.forEach((tab) => {
+
+                tab.classList.toggle(
+                    "active",
+                    tab.id === tabId
+                );
+
+            });
+
+
+            navButtons.forEach((button) => {
+
+                button.classList.toggle(
+                    "active",
+                    button.dataset.tab === tabId
+                );
+
+            });
+
+
+            history.replaceState(
+                null,
+                "",
+                `#${tabId}`
+            );
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+
+        /* =========================================================
+           NAV BUTTONS
+           ========================================================= */
+
+        navButtons.forEach((button) => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    showTab(
+                        button.dataset.tab
+                    );
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================================
+           INTERNAL CARD NAVIGATION
+           ========================================================= */
+
+        goButtons.forEach((button) => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const target =
+                        button.dataset.go;
+
+
+                    /*
+                        Education lives inside
+                        the Experience tab.
+                    */
+
+                    if (target === "education") {
+
+                        showTab("experience");
+
+
+                        setTimeout(() => {
+
+                            document
+                                .getElementById("education")
+                                ?.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start"
+                                });
+
+                        }, 100);
+
+
+                        return;
+                    }
+
+
+                    showTab(target);
+
+                }
+            );
+
+        });
+
+
+
+        /* =========================================================
+           EMAIL
+           ========================================================= */
+
+        function openEmail(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                "pradyumnarajnekar@gmail.com";
+
+
+            window.location.href =
+                `mailto:${email}`;
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+
+            }, 1500);
+
+        }
+
+
+
+        /* =========================================================
+           LINKEDIN
+           ========================================================= */
+
+        function openLinkedIn(event) {
+
+            event.preventDefault();
+
+
+            const profile =
+                "https://www.linkedin.com/in/pradyumnarajnekar";
+
+
+            window.location.href =
+                "linkedin://in/pradyumnarajnekar";
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    profile;
+
+            }, 1200);
+
+        }
+
+
+
+        /* =========================================================
+           GITHUB
+           ========================================================= */
+
+        function openGitHub(event) {
+
+            event.preventDefault();
+
+
+            const profile =
+                "https://github.com/pradyumnarajnekar";
+
+
+            window.location.href =
+                "github://user/pradyumnarajnekar";
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    profile;
+
+            }, 1200);
+
+        }
+
+
+
+        /* =========================================================
+           RESUME
+           ========================================================= */
+
+        function openResume(event) {
+
+            event.preventDefault();
+
+
+            const resumeUrl =
+                "https://docs.google.com/document/d/1rIU3Kn7OOXRfMtRIbJ1kYo0aKub27RvZ92dee3ZOgBk/edit?usp=sharing";
+
+
+            window.location.href =
+                resumeUrl;
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    resumeUrl;
+
+            }, 1200);
+
+        }
+
+
+
+        /* =========================================================
+           SOCIAL LINKS
+           ========================================================= */
+
+        function openSocial(event, url) {
+
+            /*
+                Let normal browser navigation happen.
+                This function is intentionally kept simple.
+            */
+
+            return true;
+
+        }
+
+
+
+        /* =========================================================
+           INITIAL TAB
+           ========================================================= */
+
+        const initialTab =
+            window.location.hash.replace(
+                "#",
+                ""
+            );
+
+
+        if (
+            initialTab &&
+            document.getElementById(initialTab)
+        ) {
+
+            showTab(initialTab);
+
+        } else {
+
+            showTab("me");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
