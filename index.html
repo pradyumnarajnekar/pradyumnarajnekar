@@ -2120,15 +2120,6 @@
 
         /* =========================================================
            ME SECTION — GENERAL RESPONSIVE HERO FIX
-           =========================================================
-           
-           This is the ONLY new section.
-
-           It makes the hero adapt continuously to the available
-           width instead of using separate fixed portrait sizes
-           for laptop / tablet / mobile.
-
-           Nothing else on the website is changed.
            ========================================================= */
 
         .hero {
@@ -2222,9 +2213,6 @@
         }
 
 
-        /* Prevent the hero content itself from creating
-           horizontal overflow on very narrow screens. */
-
         .hero-content,
         .hero-visual,
         .portrait {
@@ -2232,50 +2220,549 @@
         }
 
 
-        /* Allow the portrait to remain visually larger than
-           its column while the hero itself clips the overflow. */
-
         .hero-visual .portrait {
             max-width: none;
         }
-        /* ===== FINAL HERO POSITIONING FIX ===== */
 
-.hero {
-    overflow: hidden;
-}
 
-.hero-content {
-    position: relative;
-    z-index: 5;
-}
+        /* =========================================================
+           FINAL HERO POSITIONING FIX
+           ========================================================= */
 
-.hero-visual {
-    position: relative;
-    z-index: 2;
-    overflow: visible;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 0;
-    height: 100%;
-}
+        .hero {
+            overflow: hidden;
+        }
 
-.portrait {
-    position: relative;
-    z-index: 2;
 
-    /* Keep the portrait large and let it overlap the name */
-    width: min(650px, 250%);
-    max-width: none;
-    max-height: none;
-    height: auto;
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
 
-    /* Stay UP instead of dropping down */
-    transform: translate(
-        clamp(-180px, -15vw, -30px),
-        clamp(-80px, -8vw, -20px)
-    );
-}
+
+        .hero-visual {
+            position: relative;
+            z-index: 2;
+            overflow: visible;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 0;
+            height: 100%;
+        }
+
+
+        .portrait {
+            position: relative;
+            z-index: 2;
+
+            width: min(650px, 250%);
+            max-width: none;
+            max-height: none;
+            height: auto;
+
+            transform: translate(
+                clamp(-180px, -15vw, -30px),
+                clamp(-80px, -8vw, -20px)
+            );
+        }
+
+
+        /* =========================================================
+           MARK 1 — AI CHATBOT UI
+           ========================================================= */
+
+        #ai-chat-toggle {
+            position: fixed;
+
+            right: 22px;
+            bottom: 68px;
+
+            width: 54px;
+            height: 54px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--line);
+            border-radius: 50%;
+
+            background: var(--panel);
+
+            color: var(--gold);
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 1001;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.35);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        #ai-chat-toggle:hover {
+            transform: translateY(-3px);
+
+            background: var(--panel-2);
+        }
+
+
+        #ai-chat-panel {
+            position: fixed;
+
+            right: 22px;
+            bottom: 132px;
+
+            width: min(380px, calc(100vw - 28px));
+            height: min(560px, calc(100vh - 160px));
+
+            display: flex;
+            flex-direction: column;
+
+            background:
+                rgba(29,31,35,0.97);
+
+            border:
+                1px solid rgba(241,189,85,0.25);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.5);
+
+            overflow: hidden;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform:
+                translateY(18px)
+                scale(0.97);
+
+            pointer-events: none;
+
+            z-index: 1000;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        #ai-chat-panel.open {
+            opacity: 1;
+            visibility: visible;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+            pointer-events: auto;
+        }
+
+
+        .ai-chat-header {
+            min-height: 66px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 14px 16px;
+
+            background:
+                rgba(21,22,25,0.96);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+
+        .ai-chat-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+        }
+
+
+        .ai-chat-avatar {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                var(--gold-soft);
+
+            border:
+                1px solid var(--line);
+
+            color: var(--gold);
+
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+
+        .ai-chat-name {
+            color: var(--text);
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: 0.04em;
+        }
+
+
+        .ai-chat-status {
+            margin-top: 2px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+
+        #ai-chat-close {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--muted);
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        #ai-chat-close:hover {
+            color: var(--text);
+
+            background:
+                rgba(255,255,255,0.06);
+        }
+
+
+        #ai-chat-messages {
+            flex: 1;
+
+            min-height: 0;
+
+            padding: 16px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            overflow-y: auto;
+
+            scrollbar-width: thin;
+        }
+
+
+        .ai-message {
+            display: flex;
+
+            width: 100%;
+        }
+
+
+        .ai-message-bot {
+            justify-content: flex-start;
+        }
+
+
+        .ai-message-user {
+            justify-content: flex-end;
+        }
+
+
+        .ai-message-bubble {
+            max-width: 82%;
+
+            padding: 10px 13px;
+
+            border-radius: 14px;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+            white-space: pre-wrap;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        .ai-message-bot .ai-message-bubble {
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid rgba(255,255,255,0.07);
+
+            color: var(--text);
+
+            border-bottom-left-radius: 5px;
+        }
+
+
+        .ai-message-user .ai-message-bubble {
+            background:
+                var(--gold);
+
+            color: #171717;
+
+            border-bottom-right-radius: 5px;
+
+            font-weight: 600;
+        }
+
+
+        .ai-chat-quick-wrap {
+            padding: 0 14px 10px;
+
+            display: flex;
+
+            gap: 7px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .ai-chat-quick {
+            padding: 7px 10px;
+
+            border:
+                1px solid rgba(241,189,85,0.22);
+
+            border-radius: 999px;
+
+            background:
+                rgba(241,189,85,0.05);
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            cursor: pointer;
+
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .ai-chat-quick:hover {
+            color: var(--gold);
+
+            border-color: var(--line);
+
+            background:
+                rgba(241,189,85,0.09);
+        }
+
+
+        .ai-chat-input-area {
+            display: flex;
+
+            align-items: flex-end;
+
+            gap: 8px;
+
+            padding: 10px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+
+            background:
+                rgba(21,22,25,0.96);
+        }
+
+
+        #ai-chat-input {
+            flex: 1;
+
+            min-width: 0;
+
+            max-height: 120px;
+
+            resize: none;
+
+            padding: 11px 12px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            color: var(--text);
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            line-height: 1.4;
+        }
+
+
+        #ai-chat-input::placeholder {
+            color: #777;
+        }
+
+
+        #ai-chat-input:focus {
+            border-color:
+                rgba(241,189,85,0.4);
+        }
+
+
+        #ai-chat-send {
+            width: 42px;
+            height: 42px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid var(--line);
+
+            border-radius: 12px;
+
+            background:
+                var(--gold);
+
+            color: #171717;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        #ai-chat-send:hover {
+            transform: translateY(-2px);
+        }
+
+
+        .ai-typing {
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+            padding: 13px 14px;
+        }
+
+
+        .ai-typing span {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: var(--muted);
+
+            animation:
+                aiTyping 1.2s infinite ease-in-out;
+        }
+
+
+        .ai-typing span:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+
+        .ai-typing span:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+
+        @keyframes aiTyping {
+
+            0%,
+            60%,
+            100% {
+                opacity: 0.35;
+                transform: translateY(0);
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateY(-3px);
+            }
+
+        }
+
+
+        @media (max-width: 640px) {
+
+            #ai-chat-toggle {
+                right: 14px;
+                bottom: 58px;
+
+                width: 50px;
+                height: 50px;
+            }
+
+
+            #ai-chat-panel {
+                right: 14px;
+                bottom: 118px;
+
+                width: calc(100vw - 28px);
+                height: min(540px, calc(100vh - 145px));
+            }
+
+        }
+
 
     </style>
 </head>
@@ -2299,6 +2786,7 @@
                     <button
                         class="nav-btn active"
                         data-tab="me"
+                        id="nav-me"
                     >
                         Me
                     </button>
@@ -2307,6 +2795,7 @@
                     <button
                         class="nav-btn"
                         data-tab="experience"
+                        id="nav-experience"
                     >
                         Who I worked for
                     </button>
@@ -2315,6 +2804,7 @@
                     <button
                         class="nav-btn"
                         data-tab="projects"
+                        id="nav-projects"
                     >
                         What i've built
                     </button>
@@ -2323,6 +2813,7 @@
                     <button
                         class="nav-btn"
                         data-tab="skills"
+                        id="nav-skills"
                     >
                         Knowledge base
                     </button>
@@ -2360,17 +2851,23 @@
 
                 <div class="hero-content">
 
-                    <div class="eyebrow">
+                    <div
+                        class="eyebrow"
+                        id="greeting"
+                    >
                         Hei, I'm
                     </div>
 
 
-                    <h1>
+                    <h1 id="my-name">
                         Pradyumna Rajnekar
                     </h1>
 
 
-                    <p class="hero-subtitle">
+                    <p
+                        class="hero-subtitle"
+                        id="developer-role"
+                    >
                         &lt;developer&gt;
                     </p>
 
@@ -2397,7 +2894,7 @@
 
                 <div>
 
-                    <h2>
+                    <h2 id="about-heading">
                         A little about me
                     </h2>
 
@@ -2417,9 +2914,13 @@
                 <article
                     class="card"
                     style="--card-image: url('img/tcs-logo.png');"
+                    id="current-work"
                 >
 
-                    <div class="card-label">
+                    <div
+                        class="card-label"
+                        id="current-work-label"
+                    >
                         Work
                     </div>
 
@@ -2434,17 +2935,17 @@
                     </div>
 
 
-                    <h3>
+                    <h3 id="current-work-title">
                         DevOps Engineer
                     </h3>
 
 
-                    <h4>
+                    <h4 id="current-work-secondary-title">
                         Assitant Systems Engineer
                     </h4>
 
 
-                    <p>
+                    <p id="current-work-company">
                         Tata Consultancy Services, Pune
                     </p>
 
@@ -2467,9 +2968,13 @@
                 <article
                     class="card"
                     style="--card-image: url('img/medicaps.logo.png');"
+                    id="education-card"
                 >
 
-                    <div class="card-label">
+                    <div
+                        class="card-label"
+                        id="education-card-label"
+                    >
                         Education
                     </div>
 
@@ -2488,17 +2993,17 @@
                     </div>
 
 
-                    <h3>
+                    <h3 id="education-card-degree">
                         Computer Science Engineer
                     </h3>
 
 
-                    <h4>
+                    <h4 id="education-card-level">
                         Bachelor Of Technology
                     </h4>
 
 
-                    <p>
+                    <p id="education-card-university">
                         Medicaps University, Indore
                     </p>
 
@@ -2521,9 +3026,13 @@
                 <article
                     class="card"
                     style="--card-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg');"
+                    id="skills-card"
                 >
 
-                    <div class="card-label">
+                    <div
+                        class="card-label"
+                        id="skills-card-label"
+                    >
                         Skills
                     </div>
 
@@ -2546,7 +3055,7 @@
                     </div>
 
 
-                    <h3>
+                    <h3 id="me-skills">
                         Python, Java
                     </h3>
 
@@ -2569,9 +3078,13 @@
                 <article
                     class="card"
                     style="--card-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg');"
+                    id="project-card"
                 >
 
-                    <div class="card-label">
+                    <div
+                        class="card-label"
+                        id="project-card-label"
+                    >
                         Projects
                     </div>
 
@@ -2605,6 +3118,8 @@
                             onmouseout="
                                 this.style.color='var(--gold)'
                             "
+
+                            id="featured-project"
                         >
                             Vrikshnetra
                         </a>
@@ -2632,16 +3147,20 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="music-card"
+                    id="music"
                 >
 
                     <div class="music-card-content">
 
-                        <span class="music-card-label">
+                        <span
+                            class="music-card-label"
+                            id="music-label"
+                        >
                             And lately, sometimes, just to have a lightheart and to relax
                         </span>
 
 
-                        <h3>
+                        <h3 id="music-title">
                             I make music
                         </h3>
 
@@ -2676,7 +3195,7 @@
 
                 <div>
 
-                    <h2>
+                    <h2 id="contact-heading">
                         Let's Connect
                     </h2>
 
@@ -2692,13 +3211,14 @@
                     href="mailto:pradyumnarajnekar@gmail.com"
                     class="contact-item"
                     onclick="openEmail(event)"
+                    id="contact-email"
                 >
 
                     <span>
                         Mail
                     </span>
 
-                    <strong>
+                    <strong id="email">
                         pradyumnarajnekar@gmail.com
                     </strong>
 
@@ -2710,13 +3230,14 @@
                     href="https://www.linkedin.com/in/pradyumnarajnekar"
                     class="contact-item"
                     onclick="openLinkedIn(event)"
+                    id="contact-linkedin"
                 >
 
                     <span>
                         LinkedIn
                     </span>
 
-                    <strong>
+                    <strong id="linkedin-handle">
                         @pradyumnarajnekar
                     </strong>
 
@@ -2728,13 +3249,14 @@
                     href="https://github.com/pradyumnarajnekar"
                     class="contact-item"
                     onclick="openGitHub(event)"
+                    id="contact-github"
                 >
 
                     <span>
                         GitHub
                     </span>
 
-                    <strong>
+                    <strong id="github-handle">
                         @pradyumnarajnekar
                     </strong>
 
@@ -2746,13 +3268,14 @@
                     href="https://docs.google.com/document/d/1rIU3Kn7OOXRfMtRIbJ1kYo0aKub27RvZ92dee3ZOgBk/edit?usp=sharing"
                     class="contact-item"
                     onclick="openResume(event)"
+                    id="contact-resume"
                 >
 
                     <span>
                         View Resume
                     </span>
 
-                    <strong>
+                    <strong id="resume-text">
                         resume
                     </strong>
 
@@ -2778,7 +3301,7 @@
 
                 <div>
 
-                    <h2>
+                    <h2 id="experience-heading">
                         Experience
                     </h2>
 
@@ -2792,18 +3315,22 @@
 
 
                 <!-- =================================================
-                     WORK 01
+                     WORK 01 — TCS
                      ================================================= -->
 
                 <article
                     class="timeline-item"
+                    id="tcs"
                     style="
                         --timeline-image:
                         url('img/tcs-logo.png');
                     "
                 >
 
-                    <div class="timeline-date">
+                    <div
+                        class="timeline-date"
+                        id="tcs-date"
+                    >
                         Jan, 2026 — PRESENT
                     </div>
 
@@ -2822,17 +3349,20 @@
 
                         <div class="timeline-details">
 
-                            <h3>
+                            <h3 id="tcs-role">
                                 DevOps Engineer
                             </h3>
 
 
-                            <div class="timeline-company">
+                            <div
+                                class="timeline-company"
+                                id="tcs-company"
+                            >
                                 Tata Consultancy Services, Pune
                             </div>
 
 
-                            <p>
+                            <p id="tcs-description">
                                 Working as a DevOps Engineer having a hands on experience in AWS, Azure DevOps and IBM MQ.
                             </p>
 
@@ -2845,18 +3375,22 @@
 
 
                 <!-- =================================================
-                     WORK 02
+                     WORK 02 — AMERICAN CHASE
                      ================================================= -->
 
                 <article
                     class="timeline-item"
+                    id="american-chase"
                     style="
                         --timeline-image:
                         url('img/american-chase.logo.png');
                     "
                 >
 
-                    <div class="timeline-date">
+                    <div
+                        class="timeline-date"
+                        id="american-chase-date"
+                    >
                         Oct, 2025 — Jan, 2026
                     </div>
 
@@ -2875,17 +3409,20 @@
 
                         <div class="timeline-details">
 
-                            <h3>
+                            <h3 id="american-chase-role">
                                 Associate Software Engineer
                             </h3>
 
 
-                            <div class="timeline-company">
+                            <div
+                                class="timeline-company"
+                                id="american-chase-company"
+                            >
                                 American Chase, Indore
                             </div>
 
 
-                            <p>
+                            <p id="american-chase-description">
                                 Worked as a Oracle Fusion Cloud Time and Labour Consultant.
                             </p>
 
@@ -2911,9 +3448,10 @@
                 <div class="subsection-heading">
 
 
-                    <h2>
+                    <h2 id="education-heading">
                         Education
                     </h2>
+
 
                 </div>
 
@@ -2927,13 +3465,17 @@
 
                     <article
                         class="timeline-item"
+                        id="college"
                         style="
                             --timeline-image:
                             url('img/medicaps.logo.png');
                         "
                     >
 
-                        <div class="timeline-date">
+                        <div
+                            class="timeline-date"
+                            id="college-batch"
+                        >
                             Batch of 2025
                         </div>
 
@@ -2952,17 +3494,20 @@
 
                             <div class="timeline-details">
 
-                                <h3>
+                                <h3 id="college-degree">
                                     Bachelor Of Technology
                                 </h3>
 
 
-                                <div class="timeline-company">
+                                <div
+                                    class="timeline-company"
+                                    id="college-university"
+                                >
                                     Medicaps University, Mhow
                                 </div>
 
 
-                                <p>
+                                <p id="college-description">
                                     Computer Science Engineer with Specialization in AI-ML, 8.53 CGPA
                                 </p>
 
@@ -2980,13 +3525,17 @@
 
                     <article
                         class="timeline-item"
+                        id="school"
                         style="
                             --timeline-image:
                             url('img/rajeshwarlogo.png');
                         "
                     >
 
-                        <div class="timeline-date">
+                        <div
+                            class="timeline-date"
+                            id="school-batch"
+                        >
                             Batch of 2021
                         </div>
 
@@ -3005,17 +3554,20 @@
 
                             <div class="timeline-details">
 
-                                <h3>
+                                <h3 id="school-grade">
                                     XII
                                 </h3>
 
 
-                                <div class="timeline-company">
+                                <div
+                                    class="timeline-company"
+                                    id="school-name"
+                                >
                                     Rajeshwar Higher Secondary School, Mhow
                                 </div>
 
 
-                                <p>
+                                <p id="school-description">
                                     Physics, Chemistry and Maths. 90.4%
                                 </p>
 
@@ -3047,7 +3599,7 @@
 
                 <div>
 
-                    <h2>
+                    <h2 id="skills-heading">
                         Skills
                     </h2>
 
@@ -3065,7 +3617,7 @@
 
                 <div class="skills-subsection-heading">
 
-                    <h3>
+                    <h3 id="languages-heading">
                         Languages
                     </h3>
 
@@ -3092,7 +3644,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="python"
+                        >
                             Python
                         </div>
 
@@ -3117,7 +3672,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="java"
+                        >
                             Java
                         </div>
 
@@ -3142,7 +3700,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="cpp"
+                        >
                             C++
                         </div>
 
@@ -3167,7 +3728,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="sql"
+                        >
                             SQL
                         </div>
 
@@ -3187,7 +3751,7 @@
 
                 <div class="skills-subsection-heading">
 
-                    <h3>
+                    <h3 id="technologies-heading">
                         Technologies
                     </h3>
 
@@ -3214,7 +3778,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="front-end-development"
+                        >
                             Front-end Development
                         </div>
 
@@ -3239,7 +3806,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="ai-ml"
+                        >
                             AI / ML
                         </div>
 
@@ -3264,7 +3834,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="devops"
+                        >
                             DevOps
                         </div>
 
@@ -3284,7 +3857,7 @@
 
                 <div class="skills-subsection-heading">
 
-                    <h3>
+                    <h3 id="tools-heading">
                         Tools
                     </h3>
 
@@ -3311,7 +3884,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="git"
+                        >
                             Git
                         </div>
 
@@ -3336,7 +3912,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="github"
+                        >
                             GitHub
                         </div>
 
@@ -3361,7 +3940,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="vs-code"
+                        >
                             VS Code
                         </div>
 
@@ -3386,7 +3968,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="aws"
+                        >
                             AWS
                         </div>
 
@@ -3411,7 +3996,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="azure-devops"
+                        >
                             Azure DevOps
                         </div>
 
@@ -3431,7 +4019,7 @@
 
                 <div class="skills-subsection-heading">
 
-                    <h3>
+                    <h3 id="frameworks-web-heading">
                         Frameworks & Web
                     </h3>
 
@@ -3458,7 +4046,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="angular"
+                        >
                             Angular
                         </div>
 
@@ -3483,7 +4074,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="html"
+                        >
                             HTML
                         </div>
 
@@ -3507,7 +4101,10 @@
                         </div>
 
 
-                        <div class="skill-name">
+                        <div
+                            class="skill-name"
+                            id="css"
+                        >
                             CSS
                         </div>
 
@@ -3534,7 +4131,7 @@
 
                 <div>
 
-                    <h2>
+                    <h2 id="projects-heading">
                         Projects
                     </h2>
 
@@ -3548,7 +4145,10 @@
 
                 <!-- Vrikshnetra -->
 
-                <article class="project">
+                <article
+                    class="project"
+                    id="vrikshnetra-project"
+                >
 
                     <div>
 
@@ -3571,6 +4171,8 @@
                                 onmouseout="
                                     this.style.color='var(--gold)'
                                 "
+
+                                id="vrikshnetra"
                             >
                                 Vrikshnetra
                             </a>
@@ -3578,22 +4180,31 @@
                         </h3>
 
 
-                        <p>
+                        <p id="vrikshnetra-description">
                             An AI-ML and CNN based Plant Specie Identification System using a leaf Image.
                         </p>
 
 
                         <div class="project-tags">
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="vrikshnetra-python"
+                            >
                                 Python
                             </span>
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="vrikshnetra-html"
+                            >
                                 HTML
                             </span>
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="vrikshnetra-css"
+                            >
                                 CSS
                             </span>
 
@@ -3607,7 +4218,10 @@
 
                 <!-- Laptop Price Predictor -->
 
-                <article class="project">
+                <article
+                    class="project"
+                    id="laptop-price-predictor-project"
+                >
 
                     <div>
 
@@ -3630,6 +4244,8 @@
                                 onmouseout="
                                     this.style.color='var(--gold)'
                                 "
+
+                                id="laptop-price-predictor"
                             >
                                 Laptop Price Predictor
                             </a>
@@ -3637,18 +4253,24 @@
                         </h3>
 
 
-                        <p>
+                        <p id="laptop-price-predictor-description">
                             (Re-Deploying Soon) An Ai-Ml based predictor system to calculate a Laptop's price on the basis of it's specs.
                         </p>
 
 
                         <div class="project-tags">
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="laptop-python"
+                            >
                                 Python
                             </span>
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="streamlit"
+                            >
                                 StreamLit
                             </span>
 
@@ -3662,7 +4284,10 @@
 
                 <!-- Dine.in -->
 
-                <article class="project">
+                <article
+                    class="project"
+                    id="dine-in-project"
+                >
 
                     <div>
 
@@ -3685,6 +4310,8 @@
                                 onmouseout="
                                     this.style.color='var(--gold)'
                                 "
+
+                                id="dine-in"
                             >
                                 Dine.in
                             </a>
@@ -3692,22 +4319,31 @@
                         </h3>
 
 
-                        <p>
+                        <p id="dine-in-description">
                             (Deploying Soon) A complete tool to manage your restaurant and cafe. From viewing menus to paying, managing tables to recieving orders, all at one place.
                         </p>
 
 
                         <div class="project-tags">
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="backend"
+                            >
                                 Backend
                             </span>
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="database"
+                            >
                                 Database
                             </span>
 
-                            <span class="tag">
+                            <span
+                                class="tag"
+                                id="html-css-js"
+                            >
                                 HTML, CSS, JS
                             </span>
 
@@ -3861,6 +4497,105 @@
         </div>
 
     </footer>
+
+
+
+    <!-- =========================================================
+         MARK 1 — AI CHATBOT
+         ========================================================= -->
+
+         <button
+         id="ai-chat-toggle"
+         class="ai-chat-toggle"
+         aria-label="Ask Mark 1"
+     >
+         <span class="mark1-dot"></span>
+         <span>M1</span>
+     </button>
+
+
+    <div
+        id="ai-chat-panel"
+        aria-label="Mark 1 portfolio assistant"
+    >
+
+        <div class="ai-chat-header">
+
+            <div class="ai-chat-title">
+
+                <div class="ai-chat-avatar">
+                    M1
+                </div>
+
+                <div>
+
+                    <div class="ai-chat-name">
+                        Mark 1 (Beta)
+                    </div>
+
+                    <div class="ai-chat-status">
+                        Pradyumna's assistant
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="ai-chat-close"
+                aria-label="Close Mark 1"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div id="ai-chat-messages"></div>
+
+
+        <div class="ai-chat-quick-wrap">
+
+            <button class="ai-chat-quick">
+                Who is Pradyumna?
+            </button>
+
+            <button class="ai-chat-quick">
+                What are his skills?
+            </button>
+
+            <button class="ai-chat-quick">
+                Tell me about his experience
+            </button>
+
+            <button class="ai-chat-quick">
+                What projects has he built?
+            </button>
+
+        </div>
+
+
+        <div class="ai-chat-input-area">
+
+            <textarea
+                id="ai-chat-input"
+                rows="1"
+                placeholder="Ask Mark 1 anything..."
+                aria-label="Ask Mark 1"
+            ></textarea>
+
+
+            <button
+                id="ai-chat-send"
+                aria-label="Send message"
+            >
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+
+        </div>
+
+    </div>
 
 
 
@@ -4163,6 +4898,14 @@
 
     </script>
 
+
+    <!-- =========================================================
+         MARK 1 AI ASSISTANT
+         ========================================================= -->
+
+    <script src="ai.js"></script>
+
+
 </body>
 
-</html>
+</html>S
